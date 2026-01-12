@@ -1,0 +1,108 @@
+---
+title: "Configurar Mailchimp y recopilar emails"
+summary: "Configura el bloque de newsletter de Mailchimp para tu Magic Portfolio."
+publishedAt: "2025-04-16"
+tag: "Magic Portfolio"
+---
+
+## Cuenta de Mailchimp
+
+Regístrate en una [cuenta de Mailchimp](https://mailchimp.com) y crea una nueva lista si no tienes una.
+
+## Formulario embebido
+
+Crea un nuevo [formulario embebido](https://mailchimp.com/help/add-a-signup-form-to-your-website/) y copia la URL del formulario a tu configuración de Magic Portfolio.
+
+<CodeBlock
+    highlight="2"
+    codes={[
+  {
+    code:
+`const mailchimp = {
+    action: 'https://url/subscribe/post?parameters',
+    effects: {
+      ...
+    }
+};`, 
+    language: "tsx",
+    label: "src/app/resources/config.js"
+  }
+]} />
+
+## Contenido del newsletter
+
+Puedes modificar el título y la descripción en el archivo `content.js`.
+
+<CodeBlock
+    highlight="2"
+    codes={[
+  {
+    code:
+`const newsletter = {
+    display: true,
+    title: <>Suscríbete al Newsletter de {person.firstName}</>,
+    description: (
+      <>
+        Ocasionalmente escribo sobre diseño, tecnología y comparto pensamientos sobre la intersección de creatividad e ingeniería.
+      </>
+    ),
+};`, 
+    language: "tsx",
+    label: "src/app/resources/content.js"
+  }
+]} />
+
+## Efecto de fondo
+
+Hay un fondo preconfigurado en `Mailchimp.tsx` que puedes modificar en el objeto `mailchimp`. Establece elementos gráficos como gradiente, puntos, líneas y cuadrícula y configura su apariencia para el bloque de newsletter.
+
+<CodeBlock
+    codeHeight={24}
+    marginBottom="16"
+    codes={[
+  {
+    code:
+`const mailchimp = {
+    action: 'https://url/subscribe/post?parameters',
+    effects: {
+      mask: {
+        cursor: false,
+        x: 50,
+        y: 0,
+        radius: 100
+      },
+      gradient: {
+        display: true,
+        x: 50,
+        y: -25,
+        width: 100,
+        height: 100,
+        tilt: 0,
+        colorStart: 'accent-background-strong',
+        colorEnd: 'static-transparent',
+        opacity: 50
+      },
+      dots: {
+        display: true,
+        size: 2,
+        color: 'brand-on-background-weak',
+        opacity: 20
+      },
+      lines: {
+        display: false,
+        color: 'neutral-alpha-weak',
+        opacity: 100
+      },
+      grid: {
+        display: false,
+        color: 'neutral-alpha-weak',
+        opacity: 100,
+        width: 'var(--static-space-32)',
+        height: 'var(--static-space-32)'
+      }
+  }
+}`, 
+    language: "tsx",
+    label: "src/app/resources/config.js"
+  }
+]} />

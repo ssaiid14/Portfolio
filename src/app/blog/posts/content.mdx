@@ -1,0 +1,117 @@
+---
+title: "Actualizar el contenido de Magic Portfolio"
+summary: "Personaliza la plantilla del portfolio con tu propio contenido."
+publishedAt: "2025-04-18"
+tag: "Magic Portfolio"
+---
+
+## Avatar
+
+Reemplaza el archivo `public/images/avatar.jpg` con tu propia imagen de avatar. Se usa en la página `/about` así como en las imágenes `open-graph` generadas dinámicamente.
+
+## Favicon
+
+Reemplaza el archivo `src/app/favicon.ico` con tu propio favicon.
+
+## Contenido
+
+Reemplaza el contenido en el archivo `resources/content.js` con tu propio contenido. Puedes usar componentes personalizados en la mayoría de los casos, ya que las props generalmente se declaran como `ReactNode` en lugar de `string`, pero es importante que los importes en el archivo.
+
+<CodeBlock
+    marginBottom="16"
+    highlight="1-2"
+    codes={[
+  {
+    code:
+`import { InlineCode } from "@once-ui-system/core";
+import Link from "next/link";
+
+const person = {
+  ...
+};`,
+    language: "tsx",
+    label: "src/app/resources/content.js"
+  }
+]} />
+
+Las importaciones anteriores nos permitirían usar los componentes `InlineCode` y `Link` en el archivo de contenido.
+
+### Datos personales
+
+Tus datos personales se usan en toda la aplicación para renderizar encabezados, etiquetas e imágenes personalizadas. Los idiomas se muestran en la página `/about`, y la ubicación y hora en el header.
+
+<CodeBlock
+    marginBottom="16"
+    highlight="2-3,7-10"
+    codes={[
+  {
+    code:
+`const person = {
+    firstName: "Selene",
+    lastName: "Yu",
+    get name() {
+      return "...";
+    },
+    role: "Design Engineer",
+    avatar: "/images/avatar.jpg",
+    location: "Asia/Jakarta", // Esperando el identificador de zona horaria IANA, ej: 'Europe/Vienna'
+    languages: ["English", "Bahasa"], // opcional: Deja el array vacío si no quieres mostrar idiomas
+};`,
+    language: "tsx",
+    label: "src/app/resources/content.js"
+  }
+]} />
+
+### Enlaces sociales
+
+Los enlaces sociales se renderizan en la página `/about` y en el footer basándose en el array configurado en el objeto `social`. Puedes establecer iconos personalizados para cada uno, pero no olvides importarlos en `src/once-ui/icons.ts`. Lee la [documentación de Once UI](https://once-ui.com/docs/icons) para más información.
+
+<CodeBlock
+    marginBottom="16"
+    codes={[
+  {
+    code:
+`const social = [
+    {
+      name: "GitHub",
+      icon: "github",
+      link: "https://github.com/once-ui-system/nextjs-starter",
+    },
+    {
+      name: "Email",
+      icon: "email",
+      link: "mailto:lorant@once-ui.com",
+    },
+];`,
+    language: "tsx",
+    label: "src/app/resources/content.js"
+  }
+]} />
+
+### Páginas
+
+Cada página tiene su propio objeto que gestiona el contenido personalizado, como encabezados, subtítulos, imágenes y datos dinámicos.
+
+<CodeBlock
+    marginBottom="16"
+    codes={[
+  {
+    code:
+`const home = {
+    label: "Inicio",
+    title: "Portfolio de Selene Yu",
+    description: "Sitio web de portfolio mostrando mi trabajo como Design Engineer",
+    headline: <>Design engineer y creadora</>,
+    subline: (
+      <>
+        Soy Selene, una design engineer en <InlineCode>FLY</InlineCode>, donde creo experiencias
+        <br /> de usuario intuitivas. Después del trabajo, construyo mis propios proyectos.
+      </>
+    ),
+};`,
+    language: "tsx",
+    label: "src/app/resources/content.js"
+  }
+]} />
+
+La propiedad `label` se usa en la navegación del header. La propiedad `title` se usa para el título de la página y la propiedad `description` se usa para la descripción de la página. También se usan en las etiquetas meta y open graph.

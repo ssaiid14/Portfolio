@@ -1,0 +1,71 @@
+---
+title: "Crear, editar y eliminar posts del blog"
+summary: "Crea, edita y elimina posts en la sección de blog de tu Magic Portfolio."
+publishedAt: "2025-03-17"
+tag: "Magic Portfolio"
+---
+
+## Gestionar posts
+
+Puedes crear, editar y eliminar posts añadiendo, modificando o eliminando archivos `*.mdx` en el directorio `src/app/blog/posts`.
+
+## Frontmatter
+
+El frontmatter se usa para establecer los metadatos del post: título, descripción, imagen y etiquetas. Se usa en la página del post y en las etiquetas meta y open graph.
+
+<CodeBlock
+    marginBottom="16"
+    codes={[
+      {
+        code:
+`---
+title: "Llegando a un nuevo hito en mi carrera"
+publishedAt: "2024-04-08"
+image: "/images/gallery/img-02.jpg"
+summary: "Cada carrera es un viaje, lleno de desafíos, crecimiento y esos momentos significativos que marcan un cambio en nuestro camino."
+tag: "Diario"
+---`,
+        language: "tsx",
+        label: "src/app/blog/posts/post-1.mdx"
+      }
+    ]}
+/>
+
+## Sintaxis MDX
+
+Puedes usar MDX para escribir el contenido de tus posts. Te ayuda a escribir contenido rico y dinámico con código mínimo. Algunos elementos MDX se transformarán automáticamente a componentes de Once UI para integrarse mejor en el diseño y añadir funcionalidad adicional.
+
+## Componentes personalizados
+
+Puedes usar componentes personalizados en archivos MDX, pero necesitas importarlos primero en el archivo `src/components/mdx.tsx`.
+
+<CodeBlock
+    marginBottom="16"
+    highlight="11-12"
+    codes={[
+      {
+        code:
+`const components = {
+    p: createParagraph as any,
+    h1: createHeading(1) as any,
+    h2: createHeading(2) as any,
+    h3: createHeading(3) as any,
+    h4: createHeading(4) as any,
+    h5: createHeading(5) as any,
+    h6: createHeading(6) as any,
+    img: createImage as any,
+    a: CustomLink as any,
+    Table,
+    CodeBlock,
+};`,
+        language: "tsx",
+        label: "src/components/mdx.tsx"
+      }
+    ]}
+/>
+
+Como puedes ver, los componentes `Table` y `CodeBlock` ya están importados y disponibles para usar. Puedes añadir más simplemente importándolos en este archivo y pasándolos al objeto `components`.
+
+## Recarga en caliente
+
+La recarga en caliente de archivos MDX actualmente no está soportada, pero estamos trabajando en ello.

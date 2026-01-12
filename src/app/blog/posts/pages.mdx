@@ -1,0 +1,56 @@
+---
+title: "Habilitar o deshabilitar páginas de tu portfolio"
+summary: "El componente RouteGuard de Magic Portfolio se encarga de renderizar condicionalmente las páginas según tu configuración."
+image: "/images/gallery/horizontal-2.jpg"
+publishedAt: "2025-04-22"
+tag: "Magic Portfolio"
+---
+
+## Habilitar o deshabilitar páginas
+
+El componente `RouteGuard` de Magic Portfolio se encarga de renderizar condicionalmente las páginas basándose en el objeto `routes` en el archivo `resources/config.js`.
+
+<CodeBlock
+    marginBottom="16"
+    highlight="6"
+    codes={[
+  {
+    code:
+`const routes = {
+    '/':        true,
+    '/about':   true,
+    '/work':    true,
+    '/blog':    true,
+    '/gallery': false,
+};`,
+    language: "tsx",
+    label: "src/app/resources/config.js"
+  }
+]} />
+
+El código anterior asegurará que la página `/gallery` no sea accesible y no se muestre en la navegación.
+
+## Añadir nuevas páginas
+
+Al crear una nueva página, necesita ser añadida al objeto `routes` en el archivo `resources/config.js`.
+
+<CodeBlock
+    marginBottom="16"
+    highlight="6"
+    codes={[
+  {
+    code:
+`const routes = {
+    '/':        true,
+    '/about':   true,
+    '/work':    true,
+    '/blog':    true,
+    '/gallery': false,
+    '/music': true,
+};`,
+    language: "tsx",
+    label: "src/app/resources/config.js"
+  }
+]} />
+
+El código anterior asegurará que la página `/music` sea accesible. Los usuarios podrán navegar a ella después de añadirla al menú de navegación en el archivo `components/Header.tsx`.

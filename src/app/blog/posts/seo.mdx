@@ -1,0 +1,46 @@
+---
+title: "Configuración SEO para Magic Portfolio"
+summary: "Gestiona la configuración SEO de tu Magic Portfolio."
+publishedAt: "2025-04-14"
+tag: "Magic Portfolio"
+---
+
+## Etiquetas meta
+
+Magic Portfolio genera automáticamente etiquetas meta y open graph para tus páginas basándose en el archivo `content.js`.
+
+## Schema
+
+Magic Portfolio genera automáticamente etiquetas schema para tus páginas basándose en el archivo `content.js`.
+
+## Imagen Open Graph
+
+Las imágenes para compartir en redes sociales (open-graph y twitter) se generan automáticamente con `next/og`.
+
+<Feedback
+    icon
+    marginBottom="16"
+    description={<>
+        Asegúrate de haber actualizado el archivo <InlineCode>content.js</InlineCode> con tu propia información y la variable <InlineCode>baseURL</InlineCode> en el archivo <InlineCode>config.js</InlineCode>.
+    </>}
+/>
+
+<CodeBlock
+    marginBottom="16"
+    highlight="4"
+    codes={[
+      {
+        code:
+`export async function generateMetadata() {
+  const title = home.title;
+  const description = home.description;
+  const ogImage = \`https://\/api/og/generate?title=\${encodeURIComponent(title)}\`;
+   ...
+};`,
+        language: "tsx",
+        label: "src/app/{page}/page.tsx"
+      }
+    ]}
+/>
+
+La declaración anterior genera la imagen social con el título de la página. Puedes usar una imagen estática reemplazando el valor de `ogImage` con una ruta a una imagen en el directorio `public`.

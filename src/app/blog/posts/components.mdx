@@ -1,0 +1,604 @@
+---
+title: "Usar componentes personalizados en markdown"
+publishedAt: "2025-04-20"
+summary: "Cada carrera es un viaje, lleno de desafíos, crecimiento y esos momentos significativos que marcan un cambio en nuestro camino."
+tag: "Magic Portfolio"
+---
+
+Magic Portfolio reemplazará algunos elementos HTML por defecto con componentes de Once UI para integrarse mejor en el diseño y añadir funcionalidad adicional. Además, muchos componentes comunes de Once UI ya están importados y disponibles para usar.
+
+## Feedback
+
+El componente feedback se usa para mostrar información crítica a los visitantes.
+
+<Column fillWidth gap="-1" marginBottom="16" marginTop="8">
+<CodeBlock
+    radius="none"
+    topRadius="l"
+    codeHeight={24}
+    preview={<Feedback icon title="Elemento Feedback" variant="success" description="Descripción más larga del mensaje de feedback." marginBottom="24"/>}
+    codes={[
+      {
+        code:
+`<Feedback
+    icon
+    variant="success"
+    title="Elemento Feedback"
+    description="Descripción más larga del mensaje de feedback."
+/>`,
+        language: "tsx",
+        label: "Feedback"
+      }
+    ]}
+/>
+<Row fillWidth bottomRadius="l" padding="4" border="neutral-medium" background="surface">
+    <Button href="https://once-ui.com/docs/feedback" weight="default" label="Ver en Once UI" size="s" variant="tertiary" suffixIcon="chevronRight"/>
+</Row>
+</Column>
+
+## Tabla
+
+Las tablas se usan para mostrar datos en un formato estructurado.
+
+<Column fillWidth gap="-1" marginBottom="16" marginTop="8">
+<CodeBlock
+    radius="none"
+    topRadius="l"
+    preview={
+    <Table 
+      data={{
+        headers: [
+          { content: "Nombre", key: "name", sortable: true },
+          { content: "Tipo", key: "type", sortable: true },
+          { content: "Descripción", key: "description" }
+        ],
+        rows: [
+          ["title", "string", "El título del documento"],
+          ["summary", "string", "Un breve resumen del contenido del documento"],
+          ["updatedAt", "string", "La fecha de última actualización del documento"],
+          ["navLabel", "string", "La etiqueta usada en los menús de navegación"]
+        ]
+      }}
+    />}
+    codes={[
+      {
+        code:
+`<Table 
+    data={{
+      headers: [
+        { content: "Nombre", key: "name", sortable: true },
+        { content: "Tipo", key: "type", sortable: true },
+        { content: "Descripción", key: "description" }
+      ],
+      rows: [
+        ["title", "string", "El título del documento"],
+        ["summary", "string", "Un breve resumen del contenido del documento"],
+        ["updatedAt", "string", "La fecha de última actualización del documento"],
+        ["navLabel", "string", "La etiqueta usada en los menús de navegación"]
+      ]
+    }}
+/>`,
+        language: "tsx",
+        label: "Table"
+      }
+    ]}
+/>
+<Row fillWidth bottomRadius="l" padding="4" border="neutral-medium" background="surface">
+    <Button href="https://once-ui.com/docs/table" weight="default" label="Ver en Once UI" size="s" variant="tertiary" suffixIcon="chevronRight"/>
+</Row>
+</Column>
+
+## Código
+
+Usa el componente CodeBlock para mostrar fragmentos de código con resaltado de sintaxis, vista previa y funcionalidad de copiar al portapapeles. Usa el componente InlineCode para fragmentos de código en línea.
+
+### CodeBlock
+
+El componente code block funciona basándose en el CodeBlock de Once UI. Puedes acceder a él con la sintaxis completa para personalización total, o usando la sintaxis estándar de markdown (triple comillas invertidas) con props preconfiguradas.
+
+<Column fillWidth gap="-1" marginBottom="16" marginTop="8">
+<CodeBlock
+    radius="none"
+    topRadius="l"
+    codes={[
+      {
+        code:
+`// Sintaxis completa del componente
+<CodeBlock
+    codes={[
+      {
+        code: "console.log('¡Hola, Mundo!');",
+        language: "javascript",
+        label: "Ejemplo"
+      }
+    ]}
+/>
+
+// Ejemplo de sintaxis corta
+\`\`\`tsx
+function greeting(name) {
+    return \`¡Hola, \${name}!\`;
+}
+
+console.log(greeting('Mundo'));
+\`\`\``,
+        language: "tsx",
+        label: "CodeBlock"
+      }
+    ]}
+/>
+<Row fillWidth bottomRadius="l" padding="4" border="neutral-medium" background="surface">
+    <Button href="https://once-ui.com/docs/codeBlock" weight="default" label="Ver en Once UI" size="s" variant="tertiary" suffixIcon="chevronRight"/>
+</Row>
+</Column>
+
+### InlineCode
+
+El `InlineCode` es otro componente de Once UI al que puedes acceder ya sea a través de la sintaxis completa o la sintaxis corta (comillas invertidas). Generalmente se recomienda la sintaxis estándar de markdown, ya que no tiene tantas opciones de configuración.
+
+<Column fillWidth gap="-1" marginBottom="16" marginTop="8">
+<CodeBlock
+    radius="none"
+    topRadius="l"
+    codeHeight={24}
+    preview={
+    <InlineCode>
+        const x = 10;
+    </InlineCode>}
+    codes={[
+      {
+        code:
+`// Sintaxis completa del componente
+<InlineCode>
+    const x = 10;
+</InlineCode>
+
+// Ejemplo de sintaxis corta
+\`const x = 10;\``,
+        language: "tsx",
+        label: "InlineCode"
+      }
+    ]}
+/>
+<Row fillWidth bottomRadius="l" padding="4" border="neutral-medium" background="surface">
+    <Button href="https://once-ui.com/docs/inlineCode" weight="default" label="Ver en Once UI" size="s" variant="tertiary" suffixIcon="chevronRight"/>
+</Row>
+</Column>
+
+## Acordeón
+
+Los acordeones se usan para alternar entre ocultar y mostrar contenido.
+
+<Column fillWidth gap="-1" marginBottom="16" marginTop="8">
+<CodeBlock
+    radius="none"
+    topRadius="l"
+    preview={
+      <AccordionGroup 
+        items={[
+          {
+            title: "Sección 1",
+            content: <Text variant="body-default-s" onBackground="neutral-weak">Este es el contenido de la sección 1. Puedes incluir cualquier componente aquí.</Text>
+          },
+          {
+            title: "Sección 2",
+            content: <Text variant="body-default-s" onBackground="neutral-weak">Este es el contenido de la sección 2. Los acordeones son geniales para FAQs y otro contenido expandible.</Text>
+          },
+          {
+            title: "Sección 3",
+            content: <Text variant="body-default-s" onBackground="neutral-weak">Este es el contenido de la sección 3. Ayudan a ahorrar espacio ocultando contenido hasta que se necesite.</Text>
+          }
+        ]}
+      />
+    }
+    codes={[
+      {
+        code:
+`<AccordionGroup 
+    items={[
+      {
+        title: "Sección 1",
+        content: <Text>Este es el contenido de la sección 1.</Text>
+      },
+      {
+        title: "Sección 2",
+        content: <Text>Este es el contenido de la sección 2.</Text>
+      },
+      {
+        title: "Sección 3",
+        content: <Text>Este es el contenido de la sección 3.</Text>
+      }
+    ]}
+/>`,
+        language: "tsx",
+        label: "Accordion"
+      }
+    ]}
+/>
+<Row fillWidth bottomRadius="l" padding="4" border="neutral-medium" background="surface">
+    <Button href="https://once-ui.com/docs/accordion" weight="default" label="Ver en Once UI" size="s" variant="tertiary" suffixIcon="chevronRight"/>
+</Row>
+</Column>
+
+## Botón
+
+Los botones se usan para activar acciones o navegar a otras páginas.
+
+<Column fillWidth gap="-1" marginBottom="16" marginTop="8">
+<CodeBlock
+    radius="none"
+    topRadius="l"
+    codeHeight={24}
+    preview={
+    <Row gap="8" marginBottom="16" marginTop="8">
+      <Button variant="primary" label="Primario" />
+      <Button variant="secondary" label="Secundario" />
+      <Button variant="tertiary" label="Terciario" />
+    </Row>}
+    codes={[
+      {
+        code:
+`<Row gap="8">
+  <Button variant="primary" label="Primario" />
+  <Button variant="secondary" label="Secundario" />
+  <Button variant="tertiary" label="Terciario" />
+</Row>`,
+        language: "tsx",
+        label: "Button"
+      }
+    ]}
+/>
+<Row fillWidth bottomRadius="l" padding="4" border="neutral-medium" background="surface">
+    <Button href="https://once-ui.com/docs/button" weight="default" label="Ver en Once UI" size="s" variant="tertiary" suffixIcon="chevronRight"/>
+</Row>
+</Column>
+
+## Card
+
+Las cards se usan para agrupar contenido y acciones relacionadas.
+
+<Column fillWidth gap="-1" marginBottom="16" marginTop="8">
+<CodeBlock
+    radius="none"
+    topRadius="l"
+    preview={
+    <Row fillWidth horizontal="center">
+      <Card
+        href=" "
+        maxWidth={20}
+        radius="l-4"
+        direction="column"
+        padding="4"
+        gap="8"
+      >
+        <Media src="/images/projects/project-01/cover-01.jpg" aspectRatio="16/9" radius="l" sizes="400px" />
+        <Column fillWidth padding="12" gap="8" horizontal="start">
+          <Text variant="heading-strong-m" onBackground="neutral-strong" align="left">
+            Título de la Card
+          </Text>
+          <Text variant="body-default-s" onBackground="neutral-weak" align="left">
+            Esta es una descripción de la card. Puede contener múltiples líneas de texto.
+          </Text>
+        </Column>
+      </Card>
+    </Row>
+    }
+    codes={[
+      {
+        code:
+`<Card
+    href=" "
+    maxWidth={20}
+    radius="l-4"
+    direction="column"
+    padding="4"
+  >
+    <Media src="/images/projects/project-01/cover-01.jpg" aspectRatio="16/9" radius="l" sizes="400px" />
+    <Column fillWidth padding="12" gap="8" horizontal="start">
+      <Text variant="heading-strong-m" onBackground="neutral-strong" align="left">
+        Título de la Card
+      </Text>
+      <Text variant="body-default-s" onBackground="neutral-weak" align="left">
+        Esta es una descripción de la card. Puede contener múltiples líneas de texto.
+      </Text>
+    </Column>
+</Card>`,
+        language: "tsx",
+        label: "Card"
+      }
+    ]}
+/>
+<Row fillWidth bottomRadius="l" padding="4" border="neutral-medium" background="surface">
+    <Button href="https://once-ui.com/docs/card" weight="default" label="Ver en Once UI" size="s" variant="tertiary" suffixIcon="chevronRight"/>
+</Row>
+</Column>
+
+## Icono
+
+Los iconos se usan para representar visualmente acciones, objetos o conceptos. Para instrucciones sobre cómo importar nuevos iconos, ve a [la documentación de Once UI](https://once-ui.com/docs/icons).
+
+<Column fillWidth gap="-1" marginBottom="16" marginTop="8">
+<CodeBlock
+    radius="none"
+    topRadius="l"
+    codeHeight={24}
+    preview={<Row gap="24" wrap>
+      <Icon name="rocket" onBackground="danger-medium" size="m" />
+      <Icon name="close" size="m" />
+      <Icon name="check" onBackground="success-medium" size="m" />
+      <Icon name="info" onBackground="info-medium" size="m" />
+      <Icon name="warning" onBackground="warning-medium" size="m" />
+      <Icon name="chevronDown" size="m" />
+      <Icon name="search" size="m" />
+    </Row>}
+    codes={[
+      {
+        code:
+`<Icon name="rocket" size="m" />
+<Icon name="close" size="m" />
+<Icon name="check" onBackground="success-medium" size="m" />
+<Icon name="info" onBackground="info-medium" size="m" />
+<Icon name="warning" onBackground="warning-medium" size="m" />
+<Icon name="chevronDown" size="m" />
+<Icon name="search" size="m" />`,
+        language: "tsx",
+        label: "Icon"
+      }
+    ]}
+/>
+<Row fillWidth bottomRadius="l" padding="4" border="neutral-medium" background="surface">
+    <Button href="https://once-ui.com/docs/icon" weight="default" label="Ver en Once UI" size="s" variant="tertiary" suffixIcon="chevronRight"/>
+</Row>
+</Column>
+
+## Layout
+
+Los componentes de layout ayudan a estructurar el contenido en la página.
+
+### Flex
+
+El componente Flex es accesible como `Column` y `Row` y puede manejar una amplia gama de opciones de layout y propiedades de estilo.
+
+<Column fillWidth gap="-1" marginBottom="16" marginTop="8">
+<CodeBlock
+    radius="none"
+    topRadius="l"
+    preview={
+    <Row
+      fillWidth
+      s={{direction: "column"}}
+      gap="16"
+    >
+      <Column fillWidth border="neutral-alpha-medium" padding="16" radius="m">
+        <Row padding="8">Elemento Row</Row>
+        <Row padding="8">Elemento Row</Row>
+      </Column>
+      <Column fillWidth border="neutral-alpha-medium" padding="16" radius="m">
+        <Row padding="8">Elemento Row</Row>
+        <Row padding="8">Elemento Row</Row>
+      </Column>
+      <Column fillWidth border="neutral-alpha-medium" padding="16" radius="m">
+        <Row padding="8">Elemento Row</Row>
+        <Row padding="8">Elemento Row</Row>
+      </Column>
+      <Column fillWidth border="neutral-alpha-medium" padding="16" radius="m">
+        <Row padding="8">Elemento Row</Row>
+        <Row padding="8">Elemento Row</Row>
+      </Column>
+    </Row>}
+    codeHeight={24}
+    codes={[
+      {
+        code:
+`<Row
+    fillWidth
+    s={{direction: "column"}}
+    gap="16"
+  >
+    <Column fillWidth border="neutral-alpha-medium" padding="16" radius="m">
+      <Row padding="8">Elemento Row</Row>
+      <Row padding="8">Elemento Row</Row>
+    </Column>
+    <Column fillWidth border="neutral-alpha-medium" padding="16" radius="m">
+      <Row padding="8">Elemento Row</Row>
+      <Row padding="8">Elemento Row</Row>
+    </Column>
+    <Column fillWidth border="neutral-alpha-medium" padding="16" radius="m">
+      <Row padding="8">Elemento Row</Row>
+      <Row padding="8">Elemento Row</Row>
+    </Column>
+    <Column fillWidth border="neutral-alpha-medium" padding="16" radius="m">
+      <Row padding="8">Elemento Row</Row>
+      <Row padding="8">Elemento Row</Row>
+    </Column>
+</Row>`,
+        language: "tsx",
+        label: "Layout"
+      }
+    ]}
+/>
+<Row fillWidth bottomRadius="l" padding="4" border="neutral-medium" background="surface">
+    <Button href="https://once-ui.com/docs/flex" weight="default" label="Ver en Once UI" size="s" variant="tertiary" suffixIcon="chevronRight"/>
+</Row>
+</Column>
+
+### Grid
+
+Usa el grid para construir layouts de cuadrícula responsive. Se puede estilizar de manera similar al elemento Flex.
+
+<Column fillWidth gap="-1" marginBottom="16" marginTop="8">
+<CodeBlock
+    radius="none"
+    topRadius="l"
+    preview={
+    <Grid
+      fillWidth
+      columns="3"
+      s={{columns: 2}}
+      gap="16"
+    >
+      <Column border="neutral-alpha-medium" padding="16" radius="m">
+        <Text>Elemento Grid</Text>
+      </Column>
+      <Column border="neutral-alpha-medium" padding="16" radius="m">
+        <Text>Elemento Grid</Text>
+      </Column>
+      <Column border="neutral-alpha-medium" padding="16" radius="m">
+        <Text>Elemento Grid</Text>
+      </Column>
+      <Column border="neutral-alpha-medium" padding="16" radius="m">
+        <Text>Elemento Grid</Text>
+      </Column>
+      <Column border="neutral-alpha-medium" padding="16" radius="m">
+        <Text>Elemento Grid</Text>
+      </Column>
+      <Column border="neutral-alpha-medium" padding="16" radius="m">
+        <Text>Elemento Grid</Text>
+      </Column>
+    </Grid>}
+    codeHeight={24}
+    codes={[
+      {
+        code:
+`<Grid
+    fillWidth
+    columns="3"
+    s={{columns: 2}}
+    gap="16"
+  >
+    <Column border="neutral-alpha-medium" padding="16" radius="m">
+      <Text>Elemento Grid</Text>
+    </Column>
+    <Column border="neutral-alpha-medium" padding="16" radius="m">
+      <Text>Elemento Grid</Text>
+    </Column>
+    <Column border="neutral-alpha-medium" padding="16" radius="m">
+      <Text>Elemento Grid</Text>
+    </Column>
+    <Column border="neutral-alpha-medium" padding="16" radius="m">
+      <Text>Elemento Grid</Text>
+    </Column>
+    <Column border="neutral-alpha-medium" padding="16" radius="m">
+      <Text>Elemento Grid</Text>
+    </Column>
+    <Column border="neutral-alpha-medium" padding="16" radius="m">
+      <Text>Elemento Grid</Text>
+    </Column>
+</Grid>`,
+        language: "tsx",
+        label: "Layout"
+      }
+    ]}
+/>
+<Row fillWidth bottomRadius="l" padding="4" border="neutral-medium" background="surface">
+    <Button href="https://once-ui.com/docs/grid" weight="default" label="Ver en Once UI" size="s" variant="tertiary" suffixIcon="chevronRight"/>
+</Row>
+</Column>
+
+## Media
+
+Media proporciona una forma optimizada de mostrar imágenes. Accede a él con el componente `Media` para personalización completa o usa la sintaxis de markdown.
+
+<Column fillWidth gap="-1" marginBottom="16" marginTop="8">
+<CodeBlock
+    radius="none"
+    topRadius="l"
+    codeHeight={24}
+    preview={<Media src="/images/projects/project-01/cover-01.jpg" alt="Imagen de ejemplo" sizes="640px" aspectRatio="16/9" radius="l" />}
+    codes={[
+      {
+        code:
+`<Media
+    src="/images/projects/project-01/cover-01.jpg"
+    sizes="640px"
+    alt="Imagen de ejemplo"
+    aspectRatio="16/9"
+    radius="l"
+/>`,
+        language: "tsx",
+        label: "Media"
+      }
+    ]}
+/>
+<Row fillWidth bottomRadius="l" padding="4" border="neutral-medium" background="surface">
+    <Button href="https://once-ui.com/docs/Media" weight="default" label="Ver en Once UI" size="s" variant="tertiary" suffixIcon="chevronRight"/>
+</Row>
+</Column>
+
+También puedes usarlo para embeber videos de YouTube.
+
+<Column fillWidth gap="-1" marginBottom="16" marginTop="8">
+<CodeBlock
+    radius="none"
+    topRadius="l"
+    codeHeight={24}
+    preview={<Media src="https://www.youtube.com/watch?v=TQT_FSdxbC8" alt="Video de ejemplo" aspectRatio="16/9" radius="l" />}
+    codes={[
+      {
+        code:
+`<Media
+    src="https://www.youtube.com/watch?v=TQT_FSdxbC8"
+    alt="Video de ejemplo"
+    aspectRatio="16/9"
+    radius="l"
+/>`,
+        language: "tsx",
+        label: "Media"
+      }
+    ]}
+/>
+<Row fillWidth bottomRadius="l" padding="4" border="neutral-medium" background="surface">
+    <Button href="https://once-ui.com/docs/Media" weight="default" label="Ver en Once UI" size="s" variant="tertiary" suffixIcon="chevronRight"/>
+</Row>
+</Column>
+
+## Enlace
+
+SmartLink proporciona una forma mejorada de enlazar a recursos internos y externos. Puedes acceder a él con el componente `SmartLink` para personalización completa o con la sintaxis estándar de markdown.
+
+<Column fillWidth gap="-1" marginBottom="16" marginTop="8">
+<CodeBlock
+    radius="none"
+    topRadius="l"
+    preview={
+      <Row  fillWidth horizontal="center">
+        <SmartLink href=" " suffixIcon="chevronRight">Enlace con icono</SmartLink>
+      </Row>
+    }
+    codes={[
+      {
+        code:
+`<SmartLink href=" " suffixIcon="chevronRight">Enlace con icono</SmartLink>`,
+        language: "tsx",
+        label: "SmartLink"
+      }
+    ]}
+/>
+<Row fillWidth bottomRadius="l" padding="4" border="neutral-medium" background="surface">
+    <Button href="https://once-ui.com/docs/smart-link" weight="default" label="Ver en Once UI" size="s" variant="tertiary" suffixIcon="chevronRight"/>
+</Row>
+</Column>
+
+## Componentes personalizados
+
+Como Magic Portfolio está basado en Once UI, puedes usar todos los componentes proporcionados por Once UI en los archivos `.mdx`, pero necesitas importarlos primero en el archivo `src/product/mdx.tsx` y pasarlos al objeto `components`.
+
+<CodeBlock
+    marginBottom="16" marginTop="8"
+    highlight="2"
+    codes={[
+      {
+        code:
+`const components = {
+    // Añadir nuevos componentes
+    p: createParagraph as any,
+    h1: createHeading("h1") as any,
+    ...
+    Media,
+    SmartLink,
+};`,
+        language: "tsx",
+        label: "src/product/mdx.tsx"
+      }
+    ]}
+/>
