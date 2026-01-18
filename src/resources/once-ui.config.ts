@@ -34,6 +34,7 @@ const display: DisplayConfig = {
 // Set password in the .env file, refer to .env.example
 const protectedRoutes: ProtectedRoutesConfig = {
   "/blog": true,
+  "/gallery": true,
 };
 
 // Import and set font for each variant

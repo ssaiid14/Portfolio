@@ -151,12 +151,24 @@ const about: About = {
       {
         title: "Frontend",
         description: (
-          <>Desarrollo de interfaces de usuario modernas y responsivas con las últimas tecnologías web.</>
+          <>Desarrollo de interfaces de usuario modernas y responsivas con frameworks modernos.</>
         ),
         tags: [
           {
+            name: "Astro",
+            icon: "astro",
+          },
+          {
             name: "React",
             icon: "react",
+          },
+          {
+            name: "TypeScript",
+            icon: "typescript",
+          },
+          {
+            name: "Tailwind CSS",
+            icon: "tailwindcss",
           },
           {
             name: "JavaScript",
@@ -170,15 +182,32 @@ const about: About = {
             name: "CSS3",
             icon: "css3",
           },
+        ],
+        images: [],
+      },
+      {
+        title: "Animaciones & UX",
+        description: (
+          <>Creación de experiencias interactivas y animaciones fluidas para mejorar la UX.</>
+        ),
+        tags: [
           {
-            name: "Tailwind CSS",
-            icon: "tailwindcss",
+            name: "Framer Motion",
+            icon: "framermotion",
+          },
+          {
+            name: "GSAP",
+            icon: "gsap",
+          },
+          {
+            name: "AOS",
+            icon: "rocket",
           },
         ],
         images: [],
       },
       {
-        title: "Backend",
+        title: "Backend & APIs",
         description: (
           <>Desarrollo de APIs y servicios backend robustos y escalables.</>
         ),
@@ -212,17 +241,13 @@ const about: About = {
             name: "MySQL",
             icon: "mysql",
           },
-          {
-            name: "MongoDB",
-            icon: "mongodb",
-          },
         ],
         images: [],
       },
       {
-        title: "Herramientas",
+        title: "Herramientas & Deploy",
         description: (
-          <>Control de versiones, entornos de desarrollo y contenedores.</>
+          <>Control de versiones, herramientas de desarrollo y plataformas de despliegue.</>
         ),
         tags: [
           {
@@ -234,12 +259,16 @@ const about: About = {
             icon: "github",
           },
           {
-            name: "VS Code",
-            icon: "vscode",
+            name: "Vercel",
+            icon: "vercel",
           },
           {
-            name: "Docker",
-            icon: "docker",
+            name: "ESLint",
+            icon: "eslint",
+          },
+          {
+            name: "Prettier",
+            icon: "prettier",
           },
         ],
         images: [],

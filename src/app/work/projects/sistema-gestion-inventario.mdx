@@ -1,40 +1,58 @@
 ---
 title: "Sistema de Gestión de Inventario"
-publishedAt: "2024-06-15"
-summary: "Aplicación web desarrollada durante el curso DAW para gestión de inventario. Incluye CRUD completo, autenticación de usuarios, reportes básicos y panel de administración."
+publishedAt: "2024-12-15"
+summary: "Sistema completo de gestión de inventario con dashboard administrativo y API backend. Desarrollado con Clean Architecture, TypeScript, React y PostgreSQL."
 images:
   - "/images/projects/inventario/cover.jpg"
 team:
   - name: "Said Oudrhich"
-    role: "Desarrollador Full Stack"
+    role: "Full Stack Developer"
     avatar: "/images/avatar-bn.jpg"
     linkedIn: "https://linkedin.com/in/said-oudrhich"
+link: "https://dashboard.saiid.es"
 ---
 
 ## Descripción
 
-Sistema completo de gestión de inventario desarrollado como proyecto del Grado Superior en Desarrollo de Aplicaciones Web. La aplicación permite gestionar productos, categorías, proveedores y generar reportes.
+Sistema completo de gestión de inventario que incluye un dashboard administrativo moderno y una API backend robusta construida con Clean Architecture. El proyecto implementa funcionalidades avanzadas como sistema de tags, timeline de auditoría, comentarios y layouts personalizables.
 
 ## Tecnologías Utilizadas
 
-- **PHP** - Backend y lógica de negocio
-- **MySQL** - Base de datos relacional
-- **Bootstrap** - Framework CSS
-- **JavaScript** - Interactividad frontend
+### Backend
+- **TypeScript** - Tipado estático
+- **Fastify** - Framework web rápido
+- **Prisma** - ORM moderno
+- **PostgreSQL** - Base de datos relacional
+- **Zod** - Validación de esquemas
 
-## Funcionalidades
+### Frontend
+- **React 18** - Biblioteca de UI
+- **Vite** - Build tool moderno
+- **Tailwind CSS** - Framework de CSS
+- **Framer Motion** - Animaciones
+- **Radix UI** - Componentes accesibles
 
-- CRUD completo de productos y categorías
-- Sistema de autenticación de usuarios
-- Roles y permisos (admin/usuario)
-- Reportes de inventario en PDF
-- Panel de administración
-- Búsqueda y filtrado avanzado
+## Características Principales
 
-## Aprendizajes
+- Autenticación JWT con refresh tokens
+- Sistema de tags para categorización flexible
+- Timeline de auditoría para seguimiento de cambios
+- Dashboard layouts personalizables por usuario
+- Gestión completa de productos, ventas y clientes
+- Sistema de comentarios con soporte de hilos
+- Rate limiting y seguridad robusta
+- Testing completo con Vitest
 
-Este proyecto me permitió profundizar en:
-- Arquitectura MVC
-- Seguridad en aplicaciones web
-- Diseño de bases de datos relacionales
-- Gestión de sesiones y autenticación
+## Arquitectura
+
+El backend implementa Clean Architecture con capas bien definidas: domain, application, infrastructure y presentation. El frontend utiliza componentes reutilizables con estado centralizado.
+
+## Enlaces
+
+- [Ver dashboard en vivo](https://dashboard.saiid.es)
+- [Documentación de la API](https://api.dashboard.saiid.es/api/v1/docs)
+
+## Credenciales de Prueba
+
+- **Admin**: admin@example.com / password123
+- **Usuario**: carlos@example.com / password123

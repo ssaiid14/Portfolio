@@ -35,9 +35,15 @@ import {
   SiPhp,
   SiPython,
   SiMysql,
-  SiMongodb,
   SiGit,
   SiDocker,
+  SiTypescript,
+  SiAstro,
+  SiFramer,
+  SiGreensock,
+  SiVercel,
+  SiEslint,
+  SiPrettier,
 } from "react-icons/si";
 
 import { FaDiscord, FaGithub, FaLinkedin, FaX, FaThreads, FaInstagram, FaXTwitter, FaFacebook, FaPinterest, FaWhatsapp, FaReddit, FaTelegram, FaJava, } from "react-icons/fa6";
@@ -68,6 +74,8 @@ export const iconLibrary: Record<string, IconType> = {
   document: HiOutlineDocument,
   rocket: HiOutlineRocketLaunch,
   javascript: SiJavascript,
+  typescript: SiTypescript,
+  astro: SiAstro,
   nextjs: SiNextdotjs,
   supabase: SiSupabase,
   figma: SiFigma,
@@ -86,10 +94,14 @@ export const iconLibrary: Record<string, IconType> = {
   java: FaJava,
   python: SiPython,
   mysql: SiMysql,
-  mongodb: SiMongodb,
   git: SiGit,
   docker: SiDocker,
   vscode: VscCode,
+  framermotion: SiFramer,
+  gsap: SiGreensock,
+  vercel: SiVercel,
+  eslint: SiEslint,
+  prettier: SiPrettier,
 };
 
 export type IconLibrary = typeof iconLibrary;
