@@ -101,29 +101,47 @@ const about: About = {
     title: "Experiencia Laboral",
     experiences: [
       {
-        company: "DXC Technology",
-        timeframe: "3 meses",
-        role: "Técnico Informático",
+        company: "FDS, A DXC Technology Company",
+        timeframe: "Enero - Mayo",
+        role: "Desarrollador Web en Prácticas",
         achievements: [
           <>
-            Soporte técnico y mantenimiento de sistemas informáticos en entorno empresarial.
+            Desarrollo de una aplicación web desde cero.
           </>,
           <>
-            Resolución de incidencias y atención a usuarios en primera línea de soporte.
+            Creación de una API REST en PHP para la gestión de datos y servicios.
+          </>,
+          <>
+            Integración con APIs externas y conexión con varias bases de datos.
+          </>,
+          <>
+            Trabajo con bases de datos Oracle y MySQL.
+          </>,
+          <>
+            Desarrollo frontend con Next.js, TypeScript, shadcn/ui y Tailwind CSS.
           </>,
         ],
         images: [],
       },
       {
-        company: "Proyectos y Seguros S.A",
+        company: "FDS, A DXC Technology Company",
         timeframe: "3 meses",
         role: "Técnico Informático",
         achievements: [
           <>
-            Gestión y mantenimiento de infraestructura IT de la empresa.
+            Soporte técnico y mantenimiento de sistemas informáticos.
           </>,
           <>
-            Implementación de soluciones tecnológicas para mejorar procesos internos.
+            Resolución de incidencias de hardware y software.
+          </>,
+          <>
+            Configuración y mantenimiento de equipos Windows y Linux.
+          </>,
+          <>
+            Atención al usuario y documentación de procesos.
+          </>,
+          <>
+            Gestión de tickets mediante ServiceNow.
           </>,
         ],
         images: [],
@@ -136,7 +154,7 @@ const about: About = {
     institutions: [
       {
         name: "Grado Superior en Desarrollo de Aplicaciones Web (DAW)",
-        description: <>Cursando actualmente - Segundo Año. Formación avanzada en desarrollo web, programación, bases de datos y tecnologías frontend y backend.</>,
+        description: <>Finalizado. Formación avanzada en desarrollo web, programación, bases de datos y tecnologías frontend y backend.</>,
       },
       {
         name: "Técnico en Sistemas Microinformáticos y Redes (SMR)",
