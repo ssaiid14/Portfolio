@@ -64,8 +64,12 @@ const home: Home = {
   },
   subline: (
     <>
-    Soy Said, un <Text as="span" size="xl" weight="strong">Desarrollador Web Full Stack</Text> apasionado por crear <br /> aplicaciones web innovadoras con tecnologías modernas.
-</>
+      Soy Said, un{" "}
+      <Text as="span" size="xl" weight="strong">
+        Desarrollador Web Full Stack
+      </Text>{" "}
+      apasionado por crear <br /> aplicaciones web innovadoras con tecnologías modernas.
+    </>
   ),
 };
 
@@ -90,9 +94,11 @@ const about: About = {
     title: "Introducción",
     description: (
       <>
-        Said es un desarrollador web Full Stack basado en España, apasionado por crear 
-        aplicaciones web modernas y funcionales. Su trabajo abarca desde interfaces de usuario 
-        intuitivas hasta sistemas backend robustos, siempre utilizando las tecnologías más actuales.
+        Desarrollador Full Stack con experiencia en desarrollo de APIs REST y gestión de bases de
+        datos en proyectos reales. Manejo de PHP, Node.js y SQL, junto con experiencia en frontend
+        con React y Next.js. Capacidad para desarrollar aplicaciones completas (frontend y backend)
+        con enfoque en rendimiento y escalabilidad. Busco mi primera oportunidad como Backend
+        Developer para seguir creciendo en entornos profesionales y proyectos de mayor complejidad.
       </>
     ),
   },
@@ -102,47 +108,44 @@ const about: About = {
     experiences: [
       {
         company: "FDS, A DXC Technology Company",
-        timeframe: "Enero - Mayo",
-        role: "Desarrollador Web en Prácticas",
+        timeframe: "Enero 2026 - Mayo 2026",
+        role: "Desarrollador Web (Prácticas)",
         achievements: [
           <>
-            Desarrollo de una aplicación web desde cero.
+            Diseño, desarrollo e implementación de APIs REST en PHP para una aplicación web
+            completa.
+          </>,
+          <>Consumo e integración de servicios externos y APIs empresariales.</>,
+          <>Gestión de bases de datos: consultas optimizadas, modelado de datos y persistencia.</>,
+          <>
+            Desarrollo del backend completo de la aplicación junto con frontend en React y Next.js.
           </>,
           <>
-            Creación de una API REST en PHP para la gestión de datos y servicios.
-          </>,
-          <>
-            Integración con APIs externas y conexión con varias bases de datos.
-          </>,
-          <>
-            Trabajo con bases de datos Oracle y MySQL.
-          </>,
-          <>
-            Desarrollo frontend con Next.js, TypeScript, shadcn/ui y Tailwind CSS.
+            Trabajo en entorno real de producción: despliegue, integración y mantenimiento de
+            funcionalidades backend.
           </>,
         ],
         images: [],
       },
       {
         company: "FDS, A DXC Technology Company",
-        timeframe: "3 meses",
+        timeframe: "Julio 2024 - Septiembre 2024",
         role: "Técnico Informático",
         achievements: [
-          <>
-            Soporte técnico y mantenimiento de sistemas informáticos.
-          </>,
-          <>
-            Resolución de incidencias de hardware y software.
-          </>,
-          <>
-            Configuración y mantenimiento de equipos Windows y Linux.
-          </>,
-          <>
-            Atención al usuario y documentación de procesos.
-          </>,
-          <>
-            Gestión de tickets mediante ServiceNow.
-          </>,
+          <>Instalación, configuración y mantenimiento de equipos, servidores y redes.</>,
+          <>Soporte técnico a usuarios y resolución de incidencias.</>,
+          <>Administración básica de sistemas y despliegue de nuevo equipamiento.</>,
+        ],
+        images: [],
+      },
+      {
+        company: "Proyectos y Seguros S.A",
+        timeframe: "Abril 2024 - Junio 2024",
+        role: "Técnico Informático (Prácticas)",
+        achievements: [
+          <>Instalación y mantenimiento de sistemas, servidores y redes.</>,
+          <>Administración de usuarios y resolución de incidencias técnicas.</>,
+          <>Elaboración de documentación técnica y soporte a usuarios.</>,
         ],
         images: [],
       },
@@ -153,12 +156,16 @@ const about: About = {
     title: "Formación Académica",
     institutions: [
       {
-        name: "Grado Superior en Desarrollo de Aplicaciones Web (DAW)",
-        description: <>Finalizado. Formación avanzada en desarrollo web, programación, bases de datos y tecnologías frontend y backend.</>,
+        name: "IES Leonardo Da Vinci",
+        description: (
+          <>Desarrollo de Aplicaciones Web (Grado Superior) | Septiembre 2024 – Junio 2026</>
+        ),
       },
       {
-        name: "Técnico en Sistemas Microinformáticos y Redes (SMR)",
-        description: <>Completado. Conocimientos en administración de sistemas, redes informáticas, mantenimiento de equipos y soporte técnico.</>,
+        name: "IES El Cañaveral",
+        description: (
+          <>Sistemas Microinformáticos y Redes (Grado Medio) | Septiembre 2022 – Junio 2024</>
+        ),
       },
     ],
   },
@@ -167,18 +174,53 @@ const about: About = {
     title: "Habilidades Técnicas",
     skills: [
       {
-        title: "Frontend",
+        title: "Backend",
         description: (
-          <>Desarrollo de interfaces de usuario modernas y responsivas con frameworks modernos.</>
+          <>
+            Desarrollo de APIs y servicios backend robustos y escalables, gestionando bases de datos
+            y la persistencia de la información.
+          </>
         ),
         tags: [
           {
-            name: "Astro",
-            icon: "astro",
+            name: "PHP",
+            icon: "php",
           },
+          {
+            name: "Node.js",
+            icon: "nodejs",
+          },
+          {
+            name: "APIs REST",
+            icon: "globe",
+          },
+          {
+            name: "MySQL",
+            icon: "mysql",
+          },
+          {
+            name: "PostgreSQL",
+            icon: "postgresql",
+          },
+        ],
+        images: [],
+      },
+      {
+        title: "Frontend",
+        description: (
+          <>
+            Creación de interfaces de usuario modernas, responsivas e interactivas utilizando
+            frameworks y tecnologías de vanguardia.
+          </>
+        ),
+        tags: [
           {
             name: "React",
             icon: "react",
+          },
+          {
+            name: "Next.js",
+            icon: "nextjs",
           },
           {
             name: "TypeScript",
@@ -188,84 +230,15 @@ const about: About = {
             name: "Tailwind CSS",
             icon: "tailwindcss",
           },
-          {
-            name: "JavaScript",
-            icon: "javascript",
-          },
-          {
-            name: "HTML5",
-            icon: "html5",
-          },
-          {
-            name: "CSS3",
-            icon: "css3",
-          },
         ],
         images: [],
       },
       {
-        title: "Animaciones & UX",
+        title: "Otras Habilidades",
         description: (
-          <>Creación de experiencias interactivas y animaciones fluidas para mejorar la UX.</>
-        ),
-        tags: [
-          {
-            name: "Framer Motion",
-            icon: "framermotion",
-          },
-          {
-            name: "GSAP",
-            icon: "gsap",
-          },
-          {
-            name: "AOS",
-            icon: "rocket",
-          },
-        ],
-        images: [],
-      },
-      {
-        title: "Backend & APIs",
-        description: (
-          <>Desarrollo de APIs y servicios backend robustos y escalables.</>
-        ),
-        tags: [
-          {
-            name: "Node.js",
-            icon: "nodejs",
-          },
-          {
-            name: "PHP",
-            icon: "php",
-          },
-          {
-            name: "Java",
-            icon: "java",
-          },
-          {
-            name: "Python",
-            icon: "python",
-          },
-        ],
-        images: [],
-      },
-      {
-        title: "Bases de Datos",
-        description: (
-          <>Diseño y gestión de bases de datos relacionales y NoSQL.</>
-        ),
-        tags: [
-          {
-            name: "MySQL",
-            icon: "mysql",
-          },
-        ],
-        images: [],
-      },
-      {
-        title: "Herramientas & Deploy",
-        description: (
-          <>Control de versiones, herramientas de desarrollo y plataformas de despliegue.</>
+          <>
+            Control de versiones, contenedores, administración de sistemas y entornos de desarrollo.
+          </>
         ),
         tags: [
           {
@@ -277,16 +250,12 @@ const about: About = {
             icon: "github",
           },
           {
-            name: "Vercel",
-            icon: "vercel",
+            name: "Docker",
+            icon: "docker",
           },
           {
-            name: "ESLint",
-            icon: "eslint",
-          },
-          {
-            name: "Prettier",
-            icon: "prettier",
+            name: "Linux",
+            icon: "linux",
           },
         ],
         images: [],

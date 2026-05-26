@@ -24,7 +24,7 @@ export const ThemeToggle: React.FC = () => {
     <ToggleButton
       prefixIcon={icon}
       onClick={() => setTheme(nextTheme)}
-      aria-label={`Cambiar a modo ${nextTheme === 'dark' ? 'oscuro' : 'claro'}`}
+      aria-label={`Cambiar a modo ${nextTheme === "dark" ? "oscuro" : "claro"}`}
     />
   );
 };

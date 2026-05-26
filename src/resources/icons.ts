@@ -44,9 +44,25 @@ import {
   SiVercel,
   SiEslint,
   SiPrettier,
+  SiPostgresql,
+  SiLinux,
 } from "react-icons/si";
 
-import { FaDiscord, FaGithub, FaLinkedin, FaX, FaThreads, FaInstagram, FaXTwitter, FaFacebook, FaPinterest, FaWhatsapp, FaReddit, FaTelegram, FaJava, } from "react-icons/fa6";
+import {
+  FaDiscord,
+  FaGithub,
+  FaLinkedin,
+  FaX,
+  FaThreads,
+  FaInstagram,
+  FaXTwitter,
+  FaFacebook,
+  FaPinterest,
+  FaWhatsapp,
+  FaReddit,
+  FaTelegram,
+  FaJava,
+} from "react-icons/fa6";
 
 import { VscCode } from "react-icons/vsc";
 
@@ -94,8 +110,10 @@ export const iconLibrary: Record<string, IconType> = {
   java: FaJava,
   python: SiPython,
   mysql: SiMysql,
+  postgresql: SiPostgresql,
   git: SiGit,
   docker: SiDocker,
+  linux: SiLinux,
   vscode: VscCode,
   framermotion: SiFramer,
   gsap: SiGreensock,
