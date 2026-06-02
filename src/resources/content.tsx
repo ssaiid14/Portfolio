@@ -187,6 +187,10 @@ const about: About = {
             icon: "php",
           },
           {
+            name: "Laravel",
+            icon: "laravel",
+          },
+          {
             name: "Node.js",
             icon: "nodejs",
           },

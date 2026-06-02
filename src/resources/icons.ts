@@ -46,6 +46,7 @@ import {
   SiPrettier,
   SiPostgresql,
   SiLinux,
+  SiLaravel,
 } from "react-icons/si";
 
 import {
@@ -114,6 +115,7 @@ export const iconLibrary: Record<string, IconType> = {
   git: SiGit,
   docker: SiDocker,
   linux: SiLinux,
+  laravel: SiLaravel,
   vscode: VscCode,
   framermotion: SiFramer,
   gsap: SiGreensock,
